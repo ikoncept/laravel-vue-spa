@@ -16,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        <link href="{{ mix('dist/css/app.css') }}" rel="stylesheet">
         
         <title>{{ config('app.name') }}</title>
     </head>
@@ -28,7 +28,7 @@
         <script>
             window.config = @json($config);
         </script>
-        <script src="{{mix('js/app.js')}}"></script>
+        <script src="{{mix('dist/js/app.js')}}"></script>
         
     </body>
 </html>

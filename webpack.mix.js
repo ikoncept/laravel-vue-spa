@@ -12,7 +12,7 @@ const mix = require('laravel-mix')
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.js', 'public/dist/js')
     .vue()
     .webpackConfig({
         resolve: {
@@ -23,6 +23,6 @@ mix.js('resources/js/app.js', 'public/js')
         }
     })
 
-mix.postCss('resources/css/app.css', 'public/css', [
+mix.postCss('resources/css/app.css', 'public/dist/css', [
     require('tailwindcss')
 ])
