@@ -28,6 +28,8 @@
         <script>
             window.config = @json($config);
         </script>
+        <script src="{{ mix('dist/js/manifest.js') }}"></script>
+        <script src="{{ mix('dist/js/vendor.js') }}"></script>
         <script src="{{mix('dist/js/app.js')}}"></script>
         
     </body>

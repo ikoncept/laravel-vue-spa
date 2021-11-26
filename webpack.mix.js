@@ -15,6 +15,9 @@ const mix = require('laravel-mix')
 mix.js('resources/js/app.js', 'public/dist/js')
     .vue()
     .webpackConfig({
+        output: {
+            chunkFilename: 'dist/js/[name].[chunkhash].js'
+        },
         resolve: {
             extensions: ['.js', '.json', '.vue'],
             alias: {
@@ -22,7 +25,10 @@ mix.js('resources/js/app.js', 'public/dist/js')
             }
         }
     })
+    .extract()
 
 mix.postCss('resources/css/app.css', 'public/dist/css', [
     require('tailwindcss')
 ])
+
+mix.version()

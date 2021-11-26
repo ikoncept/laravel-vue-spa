@@ -1,9 +1,11 @@
 {
-    "/dist/js/app.js": "/dist/js/app.js",
-    "/dist/js/view.0.js": "/dist/js/view.0.js",
-    "/dist/js/view.2.js": "/dist/js/view.2.js",
-    "/dist/js/view.4.js": "/dist/js/view.4.js",
-    "/dist/js/view.6.js": "/dist/js/view.6.js",
-    "/dist/js/view.8.js": "/dist/js/view.8.js",
-    "/dist/css/app.css": "/dist/css/app.css"
+    "/dist/js/app.js": "/dist/js/app.js?id=16a65eb4d8381b5ad131",
+    "/dist/js/manifest.js": "/dist/js/manifest.js?id=5fb5e7e2201dd48aec08",
+    "/dist/js/view.0.7c7c400930fad6e8.js": "/dist/js/view.0.7c7c400930fad6e8.js?id=c8e77e98dd149cd73a3f",
+    "/dist/js/view.2.e541922b46576106.js": "/dist/js/view.2.e541922b46576106.js?id=a8ccf381883288a978f2",
+    "/dist/js/view.4.3b2e3073d0be82b5.js": "/dist/js/view.4.3b2e3073d0be82b5.js?id=d07d9b8b0f83c355111a",
+    "/dist/js/view.6.b5dfdf80296a5e51.js": "/dist/js/view.6.b5dfdf80296a5e51.js?id=0f53a59c31c01c7233b7",
+    "/dist/js/view.8.c526c2a39b8b26cf.js": "/dist/js/view.8.c526c2a39b8b26cf.js?id=7e6c03d99e34f44cdd1d",
+    "/dist/css/app.css": "/dist/css/app.css?id=eca6c3fcf59dca6a5ff9",
+    "/dist/js/vendor.js": "/dist/js/vendor.js?id=021ac095b140627126bf"
 }
