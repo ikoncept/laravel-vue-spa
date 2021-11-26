@@ -1,0 +1,55 @@
+{
+    "root": true,
+    "parserOptions": {
+        "parser": "@babel/eslint-parser",
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "extends": [
+        "plugin:vue/recommended",
+        "standard"
+        // "plugin:@intlify/vue-i18n/recommended"
+    ],
+    "rules": {
+        "vue/require-component-is": "off",
+        "vue/max-attributes-per-line": ["error", {
+                "singleline": { "max": 2 },
+                "multiline": { "max": 1 }
+            }
+        ],
+        "vue/component-name-in-template-casing": [
+            "error",
+            "PascalCase",
+            {
+                "registeredComponentsOnly": false,
+                "ignores": []
+            }
+        ],
+        "vue/no-v-html": "off",
+        "indent": [
+            "error", 4
+        ],
+        "vue/html-indent": [
+            "error", 4
+        ],
+        "vue/multi-word-component-names": "off",
+        "multiline-ternary": [
+            "error", "never"
+        ],
+        "eqeqeq": [
+            "error", "always"
+        ]
+        // "@intlify/vue-i18n/no-v-html": "off",
+        // "@intlify/vue-i18n/no-raw-text": [ "error", { "ignorePattern": "^[-#:()&+%/]+$" } ],
+        // "@intlify/vue-i18n/no-missing-keys-in-other-locales": [ "error" ]
+    },
+    "settings": {
+        // "vue-i18n": {
+        //     "localeDir": "./resources/js/lang/*.{yaml,yml}", // extension is glob formatting!
+        //     "messageSyntaxVersion": "^9.0.0"
+        // }
+    },
+    "plugins": [
+        "@babel"
+    ]
+}
