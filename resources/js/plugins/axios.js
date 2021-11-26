@@ -1,8 +1,11 @@
 import axios from 'axios'
 
 export default function setup () {
+    axios.defaults.withCredentials = true
+
     // Request interceptor
     axios.interceptors.request.use(request => {
+        request.url = window.config.apiUrl + request.url
         request.headers.common['Accept-Language'] = window.config.locale
 
         return request
@@ -24,8 +27,5 @@ export default function setup () {
         }
 
         return Promise.reject(error)
-    })
-    axios.create({
-        withCredentials: true
     })
 }

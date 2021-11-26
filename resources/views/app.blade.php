@@ -2,6 +2,7 @@
     $config = [
         'appName' => config('app.name'),
         'baseUrl' => config('app.url'),
+        'apiUrl' => config('app.api_url'),
         'locale' => $locale = app()->getLocale(),
         'csrfToken' => csrf_token()
     ];

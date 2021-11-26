@@ -54,8 +54,8 @@ return [
     'domain' => env('APP_DOMAIN', 'localhost'),
     'url' => env('APP_URL', 'http://localhost'),
     
-    'api_domain' => env('APP_API_DOMAIN', 'localhost'),
-    'api_url' => env('APP_API_URL', 'http://localhost'),
+    'api_domain' => env('API_DOMAIN', 'localhost'),
+    'api_url' => env('API_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
 

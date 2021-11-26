@@ -74,9 +74,9 @@ return [
     |
     */
 
-    'prefix' => 'api/auth',
+    'prefix' => 'auth',
 
-    'domain' => null,
+    'domain' => env('API_DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------

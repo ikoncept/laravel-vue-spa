@@ -27,20 +27,20 @@ export const actions = {
     async login ({ dispatch }, payload) {
         await axios.get('/sanctum/csrf-cookie')
 
-        await axios.post('/api/auth/login', payload)
+        await axios.post('/auth/login', payload)
 
         return dispatch('getUser')
     },
 
     async logout ({ commit }) {
-        await axios.post('/api/auth/logout')
+        await axios.post('/auth/logout')
 
         commit('setUser', null)
     },
 
     async getUser ({ commit }) {
         try {
-            const { data } = await axios.get('/api/whoami')
+            const { data } = await axios.get('/whoami')
 
             commit('setUser', data.data)
         } catch (err) {
