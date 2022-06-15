@@ -9,9 +9,15 @@
                     Fill in your e-mail below to receive a link to reset your password.
                 </p>
             </div>
-            <form class="mt-5 sm:flex sm:items-center" @submit.prevent="send">
+            <form
+                class="mt-5 sm:flex sm:items-center"
+                @submit.prevent="send"
+            >
                 <div class="w-full sm:max-w-xs">
-                    <label for="email" class="sr-only">Email</label>
+                    <label
+                        for="email"
+                        class="sr-only"
+                    >Email</label>
                     <input
                         id="email"
                         v-model="email"
@@ -21,7 +27,10 @@
                         placeholder="you@example.com"
                     >
                 </div>
-                <PrimaryButton type="submit" class="whitespace-nowrap">
+                <PrimaryButton
+                    type="submit"
+                    class="whitespace-nowrap"
+                >
                     Send reset link
                 </PrimaryButton>
             </form>
@@ -30,7 +39,7 @@
 </template>
 
 <script>
-import PrimaryButton from '@/components/PrimaryButton'
+import PrimaryButton from '@/components/PrimaryButton.vue'
 import axios from 'axios'
 
 export default {

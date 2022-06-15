@@ -1,8 +1,11 @@
-import store from '@/store'
+import { useAuthStore } from '@/stores/authStore'
 
 export default async (to, from, next) => {
-    console.log('guest')
-    if (store.getters['auth/user']) {
+    const store = useAuthStore()
+    const user = store.user ?? await store.whoami()
+
+    if (user) {
+        window.$logger.warn('Auth', `${user.email} already authenticated, redirecting`)
         next({ name: 'home' })
     } else {
         next()

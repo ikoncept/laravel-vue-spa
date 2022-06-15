@@ -1,15 +1,14 @@
 import { createRouter as createVueRouter, createWebHistory } from 'vue-router'
 import routes from './routes.js'
 
-const requireContext = require.context('./middleware', false, /.*\.js$/)
-
-const middlewares = requireContext.keys()
-    .map(file => {
-        return {
-            name: file.replace(/(^.\/)|(\.js$)/g, ''),
-            callback: requireContext(file).default
-        }
-    })
+// The middleware for every page of the application.
+const middlewareFiles = import.meta.globEager('@/router/middleware/**/*.js')
+const middlewares = Object.keys(middlewareFiles).map(file => {
+    return {
+        name: file.split('/').pop().replace(/(^.\/)|(\.js$)/g, ''),
+        callback: middlewareFiles[file].default
+    }
+})
 
 export default (app) => {
     const router = createVueRouter({
@@ -65,7 +64,7 @@ function callMiddleware (middlewares, to, from, next) {
         if (typeof middleware === 'function') {
             middleware(to, from, _next)
         } else {
-            throw Error(`Undefined middleware [${middleware}]`)
+            console.error(`Undefined middleware [${middleware}]`)
         }
     }
 

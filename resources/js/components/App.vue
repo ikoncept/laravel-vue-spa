@@ -12,17 +12,8 @@
 
 <script>
 import { markRaw } from 'vue'
-
-const requireContext = require.context('@/layouts', false, /.*\.vue$/)
-
-const layouts = requireContext.keys()
-    .map(file =>
-        [file.replace(/(^.\/)|(\.vue$)/g, ''), requireContext(file)]
-    )
-    .reduce((components, [name, component]) => {
-        components[name] = component.default || component
-        return components
-    }, {})
+import { mapGetters, mapState } from 'pinia'
+import { useAuthStore } from '@/stores/authStore'
 
 export default {
     el: '#app',
@@ -51,25 +42,45 @@ export default {
 
     mounted () {
         this.$logger.success(window.config.appName, 'App says hi!')
+        this.setLayout('default')
     },
 
     methods: {
+        getLayouts(){
+
+            const layoutFiles = import.meta.globEager('@/layouts/**/*.vue')
+
+            const layouts = Object.keys(layoutFiles)
+                .map(key => [key.split('/').pop().replace(/(^.\/)|(\.vue$)/g, ''), layoutFiles[key]])
+                .reduce((components, [name, component]) => {
+                    components[name] = component.default
+
+                    return components
+                }, {})
+
+            return layouts
+        },
+
         /**
        * Set the application layout.
        *
        * @param {String} layout
        */
         setLayout (layout) {
-            console.log(layout)
+            const layouts = this.getLayouts()
+
             if (!layout || !layouts[layout]) {
                 layout = this.defaultLayout
             }
+
+            this.$logger.info('App', `Setting layout to ${layout}`)
 
             this.layout = markRaw(layouts[layout])
         }
     }
 }
 </script>
+
 <style>
 .fade-enter-active,
 .fade-leave-active {

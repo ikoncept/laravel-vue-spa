@@ -6,10 +6,10 @@
 
 <script>
 
-import Child from '@/components/Child'
+import Child from '@/components/LayoutChild.vue'
 
 export default {
-    name: 'Default',
+    name: 'DefaultLayout',
 
     components: {
         Child

@@ -5,9 +5,15 @@
                 Reset password for {{ email }}
             </h3>
 
-            <form class="flex flex-col mt-5" @submit.prevent="reset">
+            <form
+                class="flex flex-col mt-5"
+                @submit.prevent="reset"
+            >
                 <div class="w-full py-2 my-1 sm:flex sm:items-center sm:justify-between">
-                    <label for="Password" class="w-4/12 "> Password </label>
+                    <label
+                        for="Password"
+                        class="w-4/12 "
+                    > Password </label>
                     <input
                         v-model="password"
                         type="password"
@@ -16,7 +22,10 @@
                     >
                 </div>
                 <div class="w-full py-2 my-1 sm:flex sm:items-center sm:justify-between">
-                    <label for="Password confirm" class="w-4/12 "> Confirm Password </label>
+                    <label
+                        for="Password confirm"
+                        class="w-4/12 "
+                    > Confirm Password </label>
                     <input
                         v-model="password_confirmation"
                         type="password"
@@ -25,7 +34,10 @@
                     >
                 </div>
                 <div class="text-right">
-                    <PrimaryButton type="submit" class="whitespace-nowrap">
+                    <PrimaryButton
+                        type="submit"
+                        class="whitespace-nowrap"
+                    >
                         Send reset link
                     </PrimaryButton>
                 </div>
@@ -35,7 +47,7 @@
 </template>
 
 <script>
-import PrimaryButton from '@/components/PrimaryButton'
+import PrimaryButton from '@/components/PrimaryButton.vue'
 import axios from 'axios'
 
 export default {
@@ -50,6 +62,7 @@ export default {
             type: String,
             required: true
         },
+
         email: {
             type: String,
             required: true

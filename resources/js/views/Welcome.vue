@@ -53,17 +53,23 @@
 </template>
 
 <script>
+import { mapState } from 'pinia'
+import { useAuthStore } from '@/stores/authStore.js'
+
 export default {
     data () {
         return {
             auth: true
         }
     },
+
     computed: {
+        ...mapState(useAuthStore, ['user']),
         user () {
-            return this.$store.getters['auth/user']
+            return this.user
         }
     },
+
     methods: {
         logout () {
             this.$store.dispatch('auth/logout')

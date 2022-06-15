@@ -1,8 +1,10 @@
-import store from '@/store'
+import { useAuthStore } from '@/stores/authStore'
 
 export default async (to, from, next) => {
-    console.log('auth')
-    if (!store.getters['auth/user']) {
+    const store = useAuthStore()
+    const user = store.user ?? await store.whoami()
+
+    if (!user) {
         next({ name: 'login' })
     } else {
         next()
